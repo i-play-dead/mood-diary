@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mood History</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🕰 Mood History 🕰</h1>
+    <ul id="history-list"></ul>
+    <a href="index.html" class="history-link">← Back to Diary</a>
+  </div>
+
+  <script>
+    const list = document.getElementById('history-list');
+    const history = JSON.parse(localStorage.getItem('moodHistory') || '[]');
+
+    if (history.length === 0) {
+      list.innerHTML = '<li>No mood entries yet!</li>';
+    } else {
+      history.reverse().forEach(entry => {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${entry.mood}</strong> - ${entry.note} <br/><small>${entry.date}</small><hr/>`;
+        list.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
