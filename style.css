@@ -1,21 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  background: linear-gradient(to right, #fcd5ce, #f9dcc4);
+  font-family: 'Gochi Hand', cursive;
+  background: linear-gradient(to right, #ffe5ec, #e0bbff, #cde7ff);
+  animation: bgMove 20s infinite linear;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 .container {
-  max-width: 500px;
+  max-width: 600px;
   margin: 2rem auto;
-  background: #fff;
+  background: white;
   padding: 2rem;
   border-radius: 25px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   text-align: center;
+  border: 4px double #ff80ab;
 }
 
 h1 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  color: #ff4081;
+  font-size: 1.8rem;
 }
 
 .mood-grid {
@@ -23,26 +34,29 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .mood-card {
-  background: #ffe5ec;
+  background: #fff0f6;
   padding: 1rem;
-  border-radius: 15px;
-  width: 80px;
+  border-radius: 20px;
+  width: 100px;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 8px #f48fb1;
+  transition: 0.2s;
+  border: 2px solid transparent;
 }
 
 .mood-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px #ff80ab;
 }
 
 .mood-card.selected {
-  background: #ffc2d1;
-  border: 2px solid #ff8fab;
+  background: #ffd1dc;
+  border-color: #f06292;
+  box-shadow: 0 0 12px #f06292;
 }
 
 .mood-card span {
@@ -55,25 +69,33 @@ textarea {
   margin-top: 1rem;
   padding: 1rem;
   border-radius: 10px;
-  border: 1px solid #ddd;
+  border: 2px dashed #ffb6c1;
   font-size: 1rem;
+  resize: vertical;
+  background: #fffafa;
 }
 
 #save-btn {
   margin-top: 1rem;
-  background-color: #ffb3c6;
+  background: #f48fb1;
   border: none;
+  color: white;
   padding: 0.7rem 1.5rem;
-  border-radius: 10px;
-  font-size: 1rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+#save-btn:hover {
+  background: #ec407a;
 }
 
 .history-link {
   display: block;
   margin-top: 2rem;
   text-decoration: none;
-  color: #b5838d;
+  color: #ab47bc;
   font-weight: bold;
 }
 
