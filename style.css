@@ -1,31 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
 
 body {
-  margin: 0;
   font-family: 'Gochi Hand', cursive;
-  background: url('https://i.imgur.com/jM3vS2K.gif'); /* reliable sparkle gif bg */
-  background-size: auto;
-  background-repeat: repeat;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Replace this with your own bg */
+  background-color: #ffe6f2;
+  color: #ff1493;
+  margin: 0;
   cursor: url('https://cur.cursors-4u.net/symbols/sym-2/sym176.cur'), auto;
 }
 
 .container {
-  max-width: 600px;
-  margin: 2rem auto;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.9);
+  margin: 3rem auto;
   padding: 2rem;
-  border-radius: 25px;
-  border: 5px double #ff80ab;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  border: 4px double hotpink;
+  border-radius: 20px;
   text-align: center;
-  position: relative;
-  backdrop-filter: blur(6px);
+  box-shadow: 0 0 20px #ff8be2;
 }
 
 h1 {
-  color: #ff69b4;
   font-size: 2rem;
-  text-shadow: 1px 1px #fff;
+  text-shadow: 2px 2px white;
+  color: #ff1493;
 }
 
 .mood-grid {
@@ -33,34 +31,28 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mood-card {
-  background: #fff0f5;
+  background: #ffe6fa;
+  border: 2px dashed #ff99cc;
   padding: 1rem;
   border-radius: 15px;
-  width: 90px;
+  width: 100px;
   cursor: pointer;
-  box-shadow: 0 0 6px #f48fb1;
-  transition: 0.2s;
-  border: 2px dotted #ffb6c1;
-  position: relative;
+  box-shadow: 0 0 10px #ff99cc;
+  transition: transform 0.2s;
 }
 
 .mood-card:hover {
-  transform: rotate(-2deg);
-  box-shadow: 0 0 10px #ff80ab;
+  transform: scale(1.05) rotate(-2deg);
 }
 
 .mood-card.selected {
-  background: #ffd1dc;
-  border-color: #f06292;
-  box-shadow: 0 0 12px #f06292;
-}
-
-.mood-card span {
-  font-size: 2rem;
-  display: block;
+  background: #ffccf9;
+  border-color: #ff33aa;
+  box-shadow: 0 0 12px #ff33aa;
 }
 
 textarea {
@@ -69,61 +61,47 @@ textarea {
   padding: 1rem;
   border-radius: 10px;
   border: 2px dashed #ffb6c1;
-  font-size: 1rem;
-  background: #fffafa;
+  background: #fff0f5;
 }
 
 #save-btn {
   margin-top: 1rem;
-  background: #f48fb1;
-  border: none;
+  background: #ff69b4;
   color: white;
-  padding: 0.7rem 1.5rem;
+  border: none;
+  padding: 0.7rem 1.2rem;
   border-radius: 12px;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  box-shadow: 0 0 8px #ff33aa;
   cursor: pointer;
-  transition: 0.2s;
-  box-shadow: 0 0 8px #ec407a;
 }
 
 #save-btn:hover {
-  background: #ec407a;
+  background: #ff1493;
 }
 
 .history-link {
-  margin-top: 2rem;
   display: block;
-  text-decoration: none;
-  color: #ab47bc;
+  margin-top: 2rem;
   font-weight: bold;
+  color: #9900cc;
   text-shadow: 1px 1px white;
 }
 
-.gif-sticker {
-  position: absolute;
-  width: 60px;
+.gif-corner {
+  position: fixed;
+  width: 80px;
+  z-index: 1000;
   pointer-events: none;
-  z-index: 2;
-  animation: float 6s infinite ease-in-out;
 }
 
-.gif-sticker.one {
-  top: -30px;
-  left: -30px;
+.gif-corner.top-left {
+  top: 10px;
+  left: 10px;
 }
 
-.gif-sticker.two {
-  bottom: -30px;
-  right: -30px;
+.gif-corner.bottom-right {
+  bottom: 10px;
+  right: 10px;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
-}
-
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
-}
