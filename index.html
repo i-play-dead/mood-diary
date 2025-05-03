@@ -39,27 +39,9 @@
 
     <textarea id="note" placeholder="Write your feelings like a fanfic confession..."></textarea>
     <button id="save-btn">Save Mood 📝</button>
-   <nav>
-  <button onclick="showSection('home')">Home</button>
-  <button onclick="showSection('history')">Mood History</button>
-</nav>
-
-<div id="home" class="section">
-  <!-- Your main mood picker content -->
-</div>
-
-<div id="history" class="section" style="display: none;">
-  <!-- Your history content -->
-</div>
-<script>
-  function showSection(id) {
-    document.querySelectorAll('.section').forEach(section => {
-      section.style.display = 'none';
-    });
-    document.getElementById(id).style.display = 'block';
-  }
-</script>
-
+    <a class="history-link" href="history.html">📚 View Mood History</a>
+  </div>
+  
 
   <script src="script.js"></script>
 </body>
