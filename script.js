@@ -1,10 +1,10 @@
 let selectedMood = "";
 
-document.querySelectorAll(".mood").forEach(btn => {
-  btn.addEventListener("click", () => {
-    selectedMood = btn.textContent;
-    document.querySelectorAll(".mood").forEach(b => b.classList.remove("selected"));
-    btn.classList.add("selected");
+document.querySelectorAll(".mood-card").forEach(card => {
+  card.addEventListener("click", () => {
+    document.querySelectorAll(".mood-card").forEach(c => c.classList.remove("selected"));
+    card.classList.add("selected");
+    selectedMood = card.dataset.mood;
   });
 });
 
@@ -20,20 +20,6 @@ document.getElementById("save-btn").addEventListener("click", () => {
 
   document.getElementById("note").value = "";
   selectedMood = "";
-  document.querySelectorAll(".mood").forEach(b => b.classList.remove("selected"));
-  showHistory();
+  document.querySelectorAll(".mood-card").forEach(c => c.classList.remove("selected"));
+  alert("Mood saved! 💖");
 });
-
-function showHistory() {
-  const historyEl = document.getElementById("history");
-  let moodHistory = JSON.parse(localStorage.getItem("moodHistory") || "[]");
-  historyEl.innerHTML = "";
-  moodHistory.forEach(entry => {
-    const li = document.createElement("li");
-    li.textContent = `${entry.date} – ${entry.mood} – ${entry.note}`;
-    historyEl.appendChild(li);
-  });
-}
-
-showHistory();
-
