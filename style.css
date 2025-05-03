@@ -3,16 +3,16 @@
 body {
   margin: 0;
   font-family: 'Gochi Hand', cursive;
-  background: url('https://i.ibb.co/McrrJFX/pastel-stars-bg.gif'); /* You can change this */
+  background: url('https://i.imgur.com/jM3vS2K.gif'); /* reliable sparkle gif bg */
   background-size: auto;
   background-repeat: repeat;
-  cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur823.cur'), auto; /* Cute cursor */
+  cursor: url('https://cur.cursors-4u.net/symbols/sym-2/sym176.cur'), auto;
 }
 
 .container {
   max-width: 600px;
   margin: 2rem auto;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   padding: 2rem;
   border-radius: 25px;
   border: 5px double #ff80ab;
@@ -99,7 +99,6 @@ textarea {
   text-shadow: 1px 1px white;
 }
 
-/* Add floating sparkles/gifs */
 .gif-sticker {
   position: absolute;
   width: 60px;
@@ -109,14 +108,20 @@ textarea {
 }
 
 .gif-sticker.one {
-  top: -20px;
-  left: -20px;
+  top: -30px;
+  left: -30px;
 }
 
 .gif-sticker.two {
-  bottom: -20px;
-  right: -20px;
+  bottom: -30px;
+  right: -30px;
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
