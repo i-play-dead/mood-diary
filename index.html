@@ -7,7 +7,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <audio src="https://youtu.be/xpZnC16A0iA?si=oEXo6yUY8Gg7CrIA" autoplay loop hidden></audio>
+  <audio autoplay loop id="bg-music">
+  <source src="https://files.catbox.moe/35bwt0.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const music = document.getElementById('bg-music');
+    music.play().catch(() => {
+      // Wait for user interaction
+      document.addEventListener('click', () => {
+        music.play();
+      }, { once: true });
+    });
+  });
+</script>
 
   <!-- FLOATING GIFS -->
   <img class="gif-corner top-left" src="https://files.catbox.moe/mf4kr0.gif" alt="sparkle">
