@@ -3,30 +3,29 @@
 body {
   margin: 0;
   font-family: 'Gochi Hand', cursive;
-  background: linear-gradient(to right, #ffe5ec, #e0bbff, #cde7ff);
-  animation: bgMove 20s infinite linear;
-}
-
-@keyframes bgMove {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  background: url('https://i.ibb.co/McrrJFX/pastel-stars-bg.gif'); /* You can change this */
+  background-size: auto;
+  background-repeat: repeat;
+  cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur823.cur'), auto; /* Cute cursor */
 }
 
 .container {
   max-width: 600px;
   margin: 2rem auto;
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   padding: 2rem;
   border-radius: 25px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border: 5px double #ff80ab;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
-  border: 4px double #ff80ab;
+  position: relative;
+  backdrop-filter: blur(6px);
 }
 
 h1 {
-  margin-bottom: 1.5rem;
-  color: #ff4081;
-  font-size: 1.8rem;
+  color: #ff69b4;
+  font-size: 2rem;
+  text-shadow: 1px 1px #fff;
 }
 
 .mood-grid {
@@ -34,22 +33,22 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
 }
 
 .mood-card {
-  background: #fff0f6;
+  background: #fff0f5;
   padding: 1rem;
-  border-radius: 20px;
-  width: 100px;
+  border-radius: 15px;
+  width: 90px;
   cursor: pointer;
-  box-shadow: 0 0 8px #f48fb1;
+  box-shadow: 0 0 6px #f48fb1;
   transition: 0.2s;
-  border: 2px solid transparent;
+  border: 2px dotted #ffb6c1;
+  position: relative;
 }
 
 .mood-card:hover {
-  transform: translateY(-5px);
+  transform: rotate(-2deg);
   box-shadow: 0 0 10px #ff80ab;
 }
 
@@ -71,7 +70,6 @@ textarea {
   border-radius: 10px;
   border: 2px dashed #ffb6c1;
   font-size: 1rem;
-  resize: vertical;
   background: #fffafa;
 }
 
@@ -85,6 +83,7 @@ textarea {
   font-size: 1.1rem;
   cursor: pointer;
   transition: 0.2s;
+  box-shadow: 0 0 8px #ec407a;
 }
 
 #save-btn:hover {
@@ -92,11 +91,34 @@ textarea {
 }
 
 .history-link {
-  display: block;
   margin-top: 2rem;
+  display: block;
   text-decoration: none;
   color: #ab47bc;
   font-weight: bold;
+  text-shadow: 1px 1px white;
 }
 
+/* Add floating sparkles/gifs */
+.gif-sticker {
+  position: absolute;
+  width: 60px;
+  pointer-events: none;
+  z-index: 2;
+  animation: float 6s infinite ease-in-out;
+}
 
+.gif-sticker.one {
+  top: -20px;
+  left: -20px;
+}
+
+.gif-sticker.two {
+  bottom: -20px;
+  right: -20px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
