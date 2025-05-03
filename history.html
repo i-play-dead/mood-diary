@@ -13,6 +13,8 @@
   </div>
 
   <script>
+  <button onclick="clearHistory()" style="margin: 20px; padding: 10px; background: pink; border: none; font-weight: bold; border-radius: 10px; box-shadow: 0 0 5px hotpink;">🧹 Delete Mood History</button>
+
     const list = document.getElementById('history-list');
     const history = JSON.parse(localStorage.getItem('moodHistory') || '[]');
 
@@ -25,6 +27,29 @@
         list.appendChild(li);
       });
     }
+  <script>
+  function clearHistory() {
+    if (confirm("Are you sure you want to delete all your mood history? 💔")) {
+      localStorage.removeItem('moodHistory');
+      location.reload();
+    }
+  }
+
+  function displayMoodHistory() {
+    const history = JSON.parse(localStorage.getItem('moodHistory')) || [];
+    const historyList = document.getElementById('historyList');
+
+    if (history.length === 0) {
+      historyList.innerHTML = "<p>No mood entries yet. ✨</p>";
+      return;
+    }
+
+    historyList.innerHTML = "<ul>" + history.map(entry => `<li>${entry}</li>`).join('') + "</ul>";
+  }
+
+  displayMoodHistory();
+</script>
+
   </script>
 </body>
 </html>
