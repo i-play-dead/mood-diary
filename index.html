@@ -2,28 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mood Diary</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="container">
+  <div class="container">
     <h1>🌈 How are you feeling today?</h1>
-    <div id="mood-buttons">
-      <button class="mood">😄</button>
-      <button class="mood">😢</button>
-      <button class="mood">😠</button>
-      <button class="mood">😴</button>
-      <button class="mood">🤩</button>
+
+    <div class="mood-grid" id="mood-options">
+      <div class="mood-card" data-mood="happy">
+        <span>😄</span>
+        <p>Happy</p>
+      </div>
+      <div class="mood-card" data-mood="sad">
+        <span>😢</span>
+        <p>Sad</p>
+      </div>
+      <div class="mood-card" data-mood="angry">
+        <span>😠</span>
+        <p>Angry</p>
+      </div>
+      <div class="mood-card" data-mood="sleepy">
+        <span>😴</span>
+        <p>Sleepy</p>
+      </div>
+      <div class="mood-card" data-mood="excited">
+        <span>🤩</span>
+        <p>Excited</p>
+      </div>
     </div>
+
     <textarea id="note" placeholder="Write a little something..."></textarea>
     <button id="save-btn">💾 Save Mood</button>
 
-    <h2>📅 Mood History</h2>
-    <ul id="history"></ul>
-  </main>
+    <a href="history.html" class="history-link">📅 View Mood History</a>
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
