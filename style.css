@@ -1,37 +1,59 @@
 body {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  background: linear-gradient(to right, #fbd3e9, #bbd2c5);
   margin: 0;
-  padding: 0;
-  text-align: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(to right, #fcd5ce, #f9dcc4);
 }
 
 .container {
-  padding: 2rem;
   max-width: 500px;
-  margin: auto;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
-#mood-buttons .mood {
-  font-size: 2rem;
-  margin: 0.3rem;
-  border: none;
-  background: none;
+h1 {
+  margin-bottom: 1rem;
+}
+
+.mood-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mood-card {
+  background: #ffe5ec;
+  padding: 1rem;
+  border-radius: 15px;
+  width: 80px;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-#mood-buttons .mood:hover {
-  transform: scale(1.2);
+.mood-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.mood-card.selected {
+  background: #ffc2d1;
+  border: 2px solid #ff8fab;
+}
+
+.mood-card span {
+  font-size: 2rem;
+  display: block;
 }
 
 textarea {
   width: 100%;
-  padding: 1rem;
   margin-top: 1rem;
+  padding: 1rem;
   border-radius: 10px;
   border: 1px solid #ddd;
   font-size: 1rem;
@@ -39,24 +61,20 @@ textarea {
 
 #save-btn {
   margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  background-color: #ffcbf2;
+  background-color: #ffb3c6;
   border: none;
+  padding: 0.7rem 1.5rem;
   border-radius: 10px;
+  font-size: 1rem;
   cursor: pointer;
 }
 
-ul#history {
-  list-style: none;
-  padding: 0;
+.history-link {
+  display: block;
   margin-top: 2rem;
+  text-decoration: none;
+  color: #b5838d;
+  font-weight: bold;
 }
 
-ul#history li {
-  background: #f1f1f1;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 10px;
-}
 
