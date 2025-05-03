@@ -3,48 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mood Diary</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>K-pop Mood Diary</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>🌈 How are you feeling today?</h1>
-<img class="gif-sticker one" src="https://i.imgur.com/akF0E6u.gif" alt="sparkle">
-<img class="gif-sticker two" src="https://i.imgur.com/ZJfnC8K.gif" alt="heart sparkle">
+  <!-- FLOATING GIFS -->
+  <img class="gif-corner top-left" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTZqZGk3ZzJ4N29zeWI2a3NreHN1c3Q4ZXc1ZHZxMGgzMmZ2NndyZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/YTbZzCkRQCEJa/giphy.gif" alt="sparkle">
+  <img class="gif-corner bottom-right" src="https://media.giphy.com/media/12NUbkX6p4xOO4/giphy.gif" alt="sparkle heart">
 
-    <div class="mood-grid" id="mood-options">
-      <div class="mood-card" data-mood="happy">
-        <span>😄</span>
-        <p>Happy</p>
-      </div>
-      <div class="mood-card" data-mood="sad">
-        <span>😢</span>
-        <p>Sad</p>
-      </div>
-      <div class="mood-card" data-mood="angry">
-        <span>😠</span>
-        <p>Angry</p>
-      </div>
-      <div class="mood-card" data-mood="sleepy">
-        <span>😴</span>
-        <p>Sleepy</p>
-      </div>
-      <div class="mood-card" data-mood="excited">
-        <span>🤩</span>
-        <p>Excited</p>
-      </div>
+  <div class="container">
+    <h1>🎀 My K-pop Mood Diary 🎀</h1>
+    
+    <div class="mood-grid">
+      <div class="mood-card" data-mood="💖 Happy"><span>💖</span> Happy</div>
+      <div class="mood-card" data-mood="😭 Sad"><span>😭</span> Sad</div>
+      <div class="mood-card" data-mood="😤 Angry"><span>😤</span> Angry</div>
+      <div class="mood-card" data-mood="✨ Bias Wrecked"><span>✨</span> Bias Wrecked</div>
     </div>
 
-    <textarea id="note" placeholder="Write a little something..."></textarea>
-    <button id="save-btn">💾 Save Mood</button>
-
-    <a href="history.html" class="history-link">📅 View Mood History</a>
+    <textarea id="note" placeholder="Write your feelings like a fanfic confession..."></textarea>
+    <button id="save-btn">Save Mood 📝</button>
+    <a class="history-link" href="history.html">📚 View Mood History</a>
   </div>
 
   <script src="script.js"></script>
-  <link rel="stylesheet" href="style.css">
-
 </body>
 </html>
-
 
