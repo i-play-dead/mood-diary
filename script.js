@@ -1,27 +1,34 @@
-window.addEventListener("DOMContentLoaded", () => {
-  let selectedMood = "";
+const moodCards = document.querySelectorAll('.mood-card');
+const noteInput = document.getElementById('note');
+const saveButton = document.getElementById('save-btn');
 
-  document.querySelectorAll(".mood-card").forEach(card => {
-    card.addEventListener("click", () => {
-      document.querySelectorAll(".mood-card").forEach(c => c.classList.remove("selected"));
-      card.classList.add("selected");
-      selectedMood = card.dataset.mood;
-    });
+let selectedMood = null;
+
+moodCards.forEach(card => {
+  card.addEventListener('click', () => {
+    moodCards.forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    selectedMood = card.getAttribute('data-mood');
   });
+});
 
-  document.getElementById("save-btn").addEventListener("click", () => {
-    if (!selectedMood) return alert("Please select a mood!");
-    const note = document.getElementById("note").value;
-    const date = new Date().toLocaleDateString();
+saveButton.addEventListener('click', () => {
+  if (!selectedMood) {
+    alert('Pick a mood first, stan!');
+    return;
+  }
 
-    const entry = { date, mood: selectedMood, note };
-    let moodHistory = JSON.parse(localStorage.getItem("moodHistory") || "[]");
-    moodHistory.unshift(entry);
-    localStorage.setItem("moodHistory", JSON.stringify(moodHistory));
+  const entry = {
+    mood: selectedMood,
+    note: noteInput.value,
+    date: new Date().toLocaleString()
+  };
 
-    document.getElementById("note").value = "";
-    selectedMood = "";
-    document.querySelectorAll(".mood-card").forEach(c => c.classList.remove("selected"));
-    alert("Mood saved! 💖");
-  });
+  const history = JSON.parse(localStorage.getItem('moodHistory') || '[]');
+  history.push(entry);
+  localStorage.setItem('moodHistory', JSON.stringify(history));
+  alert('Mood saved 💿');
+  noteInput.value = '';
+  moodCards.forEach(c => c.classList.remove('selected'));
+  selectedMood = null;
 });
